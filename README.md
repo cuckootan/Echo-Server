@@ -21,7 +21,7 @@ A lightweight non\-blocking network library in C++ on Linux.
 
 如上图所示：
 
-1.  首先，由用户建立 TcpServer, ThreadPool，并定义 onConnection, onMessage, onClose (均为 TcpConnectionCallback 类型) 三种事件处理函数，然后启动 TcpServer 和 ThreadPool。
+1.  首先，由用户建立 TcpServer, ThreadPool，并定义 onConnection, onMessage, onClose 三种事件处理函数 (均为 TcpConnectionCallback 类型，在构造 TcpServer 对象时，会注册到其中，然后逐层注册到 Poller 以及 TcpConnection 中)，然后启动 TcpServer 和 ThreadPool。
 
     其中，
 
