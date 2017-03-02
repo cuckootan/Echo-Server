@@ -37,19 +37,39 @@ A lightweight non\-blocking network library in C++ on Linux.
 
 ## 3 编译与安装
 
-首先执行：
+首先执行如下命令将项目下载到本地：
+
 `git clone https://github.com/cuckootan/Echo-Server`
 
-该项目提供了 **makefile** 和 **cmake** 两种安装方式。
+该项目提供了 **makefile** 文件，因此可以直接进行编译安装：
 
--   对于 **makefile**，切换至 **Echo\-Server** 目录，执行：
+-   切换至 **Echo-Server** 目录，执行如下命令进行编译：
+
     `make`
--   对于 **cmake**，切换至 **Echo\-Server** 目录，执行：
+
+    得到的动态库文件名为 **libecho.so**，存放在 **${PROJECT_DIR}/lib** 中。
+-   然后执行如下命令进行安装：
+
+    `make install`
+
+    会自动将动态库文件安装到 **/usr/local/lib** 中，所有头文件会安装到 **/usr/local/include** 中。
+
+除此之外，还提供了通过 **cmake** 生成 makefile 文件的编译安装方式：
+
+-   切换至 **Echo-Server** 目录，执行如下命令进行编译：
+
     `mkdir build && cd build`
+
     `cmake ..`
+
     `make`
 
-得到的动态库文件名为 **libecho.so**，存放在 **${PROJECT}/lib** 中。
+    得到的动态库文件名为 **libecho.so**，存放在 **${PROJECT_DIR}/lib** 中。
+-   然后执行如下命令进行安装：
+
+    `make install`
+
+    会自动将动态库文件安装到 **/usr/local/lib** 中，所有头文件会安装到 **/usr/local/include** 中。
 
 ---
 

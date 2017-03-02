@@ -5,7 +5,6 @@ INCLUDES_DIR=./include
 LIBS_DIR=./lib
 OBJS_DIR=./obj
 
-# 只需要根据工程子目录的组织以及命名情况，以及需要添加哪些编译参数，添加哪些动态库，对以下两个变量作出修改。
 CFLAGS=-I$(INCLUDES_DIR) -c -Wall -fPIC -std=c++0x
 LDFLAGS=-shared -lpthread
 
@@ -22,16 +21,16 @@ LIB=$(LIBS_DIR)/libecho.so
 
 
 $(LIB):$(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(OBJS_DIR)/%.o:$(SOURCES_DIR)/%.cc
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) -o $@ $< $(CFLAGS)
 
-
-
-.PHONY:clean run
+.PHONY:clean install
 clean:
-	rm -f $(OBJS_DIR)/*.o
+	rm -f $(OBJS_DIR)/*
 	rm -f $(LIBS_DIR)/*
-run:
-	$(BIN)
+install:
+	sudo -A mkdir -p /usr/local/include/echo
+	sudo -A cp -rf $(LIB) /usr/local/lib
+	sudo -A cp -rf $(INCLUDES_DIR)/*.h /usr/local/include/echo
