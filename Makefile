@@ -28,9 +28,9 @@ $(OBJS_DIR)/%.o:$(SOURCES_DIR)/%.cc
 
 .PHONY:clean install
 clean:
-	rm -f $(OBJS_DIR)/*
-	rm -f $(LIBS_DIR)/*
+	rm -f $(OBJS)
+	rm -f $(LIB)
 install:
-	sudo -A mkdir -p /usr/local/include/echo
-	sudo -A cp -rf $(LIB) /usr/local/lib
-	sudo -A cp -rf $(INCLUDES_DIR)/*.h /usr/local/include/echo
+	mkdir -p /usr/local/include/echo
+	cp -rf $(LIB) /usr/local/lib
+	cp -rf $(INCLUDES_DIR)/*.h /usr/local/include/echo

@@ -50,7 +50,7 @@ A lightweight non\-blocking network library in C++ on Linux.
     得到的动态库文件名为 **libecho.so**，存放在 **${PROJECT_DIR}/lib** 中。
 -   然后执行如下命令进行安装：
 
-    `make install`
+    `sudo make install`
 
     会自动将动态库文件安装到 **/usr/local/lib** 中，所有头文件会安装到 **/usr/local/include** 中。
 
@@ -67,7 +67,7 @@ A lightweight non\-blocking network library in C++ on Linux.
     得到的动态库文件名为 **libecho.so**，存放在 **${PROJECT_DIR}/lib** 中。
 -   然后执行如下命令进行安装：
 
-    `make install`
+    `sudo make install`
 
     会自动将动态库文件安装到 **/usr/local/lib** 中，所有头文件会安装到 **/usr/local/include** 中。
 
